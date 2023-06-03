@@ -92,7 +92,7 @@ if menu == 'Introduction':
 elif menu == 'Analysis':
     st.write('Lets Do EDA')
     st.header('Cars Produced')
-    cat = st.selectbox('Number of cars produced by:',('Manufacturer','Catagory','Model'),) 
+    cat = st.selectbox('Number of cars produced by:',('Manufacturer','Category','Model'),) 
     if cat == 'Manufacturer':
         fig1 = plt.figure(figsize=(15,10))
         Manufacturer = df.Manufacturer.value_counts()
@@ -113,18 +113,17 @@ elif menu == 'Analysis':
         st.pyplot(fig2)
         
     elif cat == 'Model':
-        Category = df.Category.value_counts()
+        Category = df.Category.value_counts().head(40)
         fig3=plt.figure(figsize=(10,6))
-        plt.tight_layout(pad=2)
         font = {'family' : 'monospace',
                 'weight' : 'bold',
                 }
         plt.rc('font', **font)
         plt.title( 'Cars in each category')
         sns.set_style("white")
-        x=sns.barplot(Category.index,Category);
-        x.set_xticklabels(Category.index ,rotation=90)
-        x.set(xlabel='Category Name', ylabel='Number of Cars')
+        d=sns.barplot(x=Category.index, y= Category);
+        d.set_xticklabels(Category.index ,rotation=90)
+        d.set(xlabel='Category Name', ylabel='Number of Cars')
         st.pyplot(fig3)
         
     st.header('Tree Map')
