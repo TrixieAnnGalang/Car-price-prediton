@@ -122,7 +122,7 @@ elif menu == 'Analysis':
         plt.rc('font', **font)
         plt.title( 'Cars in each category')
         sns.set_style("white")
-        x=sns.barplot(x=Category.index,Category);
+        x=sns.barplot(Category.index,Category);
         x.set_xticklabels(Category.index ,rotation=90)
         x.set(xlabel='Category Name', ylabel='Number of Cars')
         st.pyplot(fig3)
