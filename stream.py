@@ -178,4 +178,3 @@ elif menu == 'Model':
         st.write('*Mean Absolute error =9925.74945198783*')
 
 
-
