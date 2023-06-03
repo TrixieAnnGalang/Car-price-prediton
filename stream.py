@@ -122,9 +122,9 @@ elif menu == 'Analysis':
         plt.rc('font', **font)
         plt.title( 'Cars in each category')
         sns.set_style("white")
-        category_car=sns.barplot(Category.index,Category);
-        category_car.set_xticklabels(Category.index ,rotation=90)
-        category_car.set(xlabel='Category Name', ylabel='Number of Cars')
+        x=sns.barplot(Category.index,Category);
+        x.set_xticklabels(Category.index ,rotation=90)
+        x.set(xlabel='Category Name', ylabel='Number of Cars')
         st.pyplot(fig3)
         
     st.header('Tree Map')
