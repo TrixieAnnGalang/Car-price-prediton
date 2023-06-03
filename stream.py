@@ -102,7 +102,7 @@ elif menu == 'Analysis':
         m.set_xticklabels(Manufacturer.index, rotation = 90)
         m.set(xlabel ='Manufacturer', ylabel = 'Values')
         st.pyplot(fig1)
-    elif cat=='Catagory':
+    elif cat=='Category':
         Model = df.Model.value_counts().head(40)
         fig2=plt.figure(figsize=(15,10))
         plt.title('Different Model Cars', fontsize =12)
