@@ -106,7 +106,7 @@ elif menu == 'Analysis':
         Model = df.Model.value_counts().head(40)
         fig2=plt.figure(figsize=(15,10))
         plt.title('Different Model Cars', fontsize =12)
-        mode = sns.barplot(Model.index, Model, palette ='Paired')
+        mode = sns.barplot(x=Model.index,y= Model, palette ='Paired')
         sns.set_style('dark')
         mode.set_xticklabels(Model.index, rotation = 90)
         mode.set(xlabel= 'Car Model', ylabel = 'Values')
